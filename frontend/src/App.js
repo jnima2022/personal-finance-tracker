@@ -1,27 +1,20 @@
-import logo from './logo.svg';
+import React from 'react';
+import Dashboard from './components/Dashboard';
+import TransactionList from './components/TransactionList';
+import BudgetList from './components/BudgetList';
+import AddTransactionForm from './components/AddTransactionForm';
 import './App.css';
-import axios from 'axios';
-
-// Configure base URL for backend (adjust port if needed)
-axios.defaults.baseURL = 'http://localhost:8080/api';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Personal Finance Tracker</h1>
+      <Dashboard />
+      <TransactionList />
+      <BudgetList />
+      <AddTransactionForm onTransactionAdded={() => {
+        // You can add logic here to refresh other components if needed
+      }} />
     </div>
   );
 }
