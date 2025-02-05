@@ -14,50 +14,22 @@ const AddTransactionForm = ({ onTransactionAdded }) => {
     };
 
     const handleSubmit = (e) => {
-    e.preventDefault();
-    axios.post('/transactions', transaction)
-        .then(response => {
-        console.log('Transaction added:', response.data);
-        onTransactionAdded(response.data);
-        setTransaction({ description: '', amount: '', category: '', date: '' });
-        })
-        .catch(error => console.error('Error adding transaction:', error));
+        e.preventDefault();
+        axios.post('/transactions', transaction) // ✅ FIX API PREFIX
+            .then(() => {
+                onTransactionAdded(); // ✅ Trigger refresh
+                setTransaction({ description: '', amount: '', category: '', date: '' });
+            })
+            .catch(error => console.error('Error adding transaction:', error));
     };
 
     return (
     <form onSubmit={handleSubmit}>
         <h2>Add Transaction</h2>
-        <input
-        type="text"
-        name="description"
-        value={transaction.description}
-        onChange={handleChange}
-        placeholder="Description"
-        required
-        />
-        <input
-        type="number"
-        name="amount"
-        value={transaction.amount}
-        onChange={handleChange}
-        placeholder="Amount"
-        required
-        />
-        <input
-        type="text"
-        name="category"
-        value={transaction.category}
-        onChange={handleChange}
-        placeholder="Category"
-        required
-        />
-        <input
-        type="date"
-        name="date"
-        value={transaction.date}
-        onChange={handleChange}
-        required
-        />
+        <input type="text" name="description" value={transaction.description} onChange={handleChange} placeholder="Description" required />
+        <input type="number" name="amount" value={transaction.amount} onChange={handleChange} placeholder="Amount" required/>
+        <input type="text" name="category" value={transaction.category} onChange={handleChange} placeholder="Category" required />
+        <input type="date" name="date" value={transaction.date} onChange={handleChange} required />
         <button type="submit">Add Transaction</button>
     </form>
     );

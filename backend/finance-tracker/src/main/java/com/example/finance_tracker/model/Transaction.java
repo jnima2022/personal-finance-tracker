@@ -2,6 +2,8 @@ package com.example.finance_tracker.model;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,6 +24,7 @@ public class Transaction {
     
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonIgnore // ✅ Prevents infinite loop
     private UserProfile user;
     
     // Default constructor (required by JPA)

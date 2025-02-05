@@ -1,40 +1,96 @@
-.App {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-h1, h2 {
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif; /* Modern Font */
+  background-color: #f4f4f9; /* Light background */
   color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
+/* Container */
+.App {
+  max-width: 900px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Headings */
+h1 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #34495e;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+/* Card-style Lists */
 ul {
   list-style-type: none;
   padding: 0;
 }
 
 li {
-  margin-bottom: 10px;
+  background: #ffffff;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Form Styling */
 form {
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: column;
-  max-width: 300px;
 }
 
-input, button {
-  margin-bottom: 10px;
-  padding: 5px;
+/* Inputs */
+input {
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
+/* Buttons */
 button {
   background-color: #4CAF50;
   color: white;
+  padding: 10px;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s ease;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #388E3C;
+}
+
+/* Dashboard Pie Chart */
+.dashboard-container {
+  margin-top: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }

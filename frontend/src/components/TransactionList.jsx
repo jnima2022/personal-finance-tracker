@@ -5,7 +5,7 @@ const TransactionList = () => {
     const [transactions, setTransactions] = useState([]);
 
     useEffect(() => {
-    axios.get('/transactions')
+        axios.get('/transactions')
         .then(response => setTransactions(response.data))
         .catch(error => console.error('Error fetching transactions:', error));
     }, []);
