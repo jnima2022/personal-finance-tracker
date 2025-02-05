@@ -27,7 +27,7 @@ This project is a full-stack web application for personal finance management. It
 
 ### Backend Setup
 1. Clone the repository:
-  git clone https://github.com/your-username/personal-finance-tracker.git
+  git clone https://github.com/jnima2022/personal-finance-tracker.git
   cd personal-finance-tracker
 
 2. Navigate to the backend directory:
