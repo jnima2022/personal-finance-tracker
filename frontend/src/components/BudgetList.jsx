@@ -11,16 +11,23 @@ const BudgetList = () => {
     }, []);
 
     return (
-    <div>
-        <h2>Budgets</h2>
-        <ul>
-        {budgets.map(budget => (
-            <li key={budget.id}>
-            {budget.category}: ${budget.amount}
-            </li>
-        ))}
-        </ul>
-    </div>
+        <div>
+            <h2>Budgets</h2>
+            <ul>
+                {budgets.map(budget => (
+                <li key={budget.id}>
+                    <div>
+                    <span style={{ fontWeight: 600 }}>{budget.category}</span>
+                    </div>
+                    <div>
+                    <span style={{ color: '#2563eb', fontWeight: 700 }}>
+                        {Number(budget.amount).toLocaleString(undefined, { style: 'currency', currency: 'USD' })}
+                    </span>
+                    </div>
+                </li>
+                ))}
+            </ul>
+        </div>
     );
 };
 

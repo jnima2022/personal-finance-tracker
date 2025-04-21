@@ -24,14 +24,39 @@ const AddTransactionForm = ({ onTransactionAdded }) => {
     };
 
     return (
-    <form onSubmit={handleSubmit}>
-        <h2>Add Transaction</h2>
-        <input type="text" name="description" value={transaction.description} onChange={handleChange} placeholder="Description" required />
-        <input type="number" name="amount" value={transaction.amount} onChange={handleChange} placeholder="Amount" required/>
-        <input type="text" name="category" value={transaction.category} onChange={handleChange} placeholder="Category" required />
-        <input type="date" name="date" value={transaction.date} onChange={handleChange} required />
-        <button type="submit">Add Transaction</button>
-    </form>
+        <form onSubmit={handleSubmit}>
+            <input
+                name="description"
+                value={transaction.description}
+                onChange={handleChange}
+                placeholder="Description"
+                required
+            />
+            <input
+                name="amount"
+                value={transaction.amount}
+                onChange={handleChange}
+                placeholder="Amount"
+                type="number"
+                step="0.01"
+                required
+            />
+            <input
+                name="category"
+                value={transaction.category}
+                onChange={handleChange}
+                placeholder="Category"
+                required
+            />
+            <input
+                name="date"
+                value={transaction.date}
+                onChange={handleChange}
+                type="date"
+                required
+            />
+            <button type="submit">Add Transaction</button>
+        </form>
     );
 };
 

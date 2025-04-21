@@ -66,13 +66,52 @@ const Dashboard = () => {
     }, [chartData]); 
 
     return (
-        <div>
-            <h2>Financial Dashboard</h2>
-            
-            <div style={{ width: '300px', height: '300px' }}>
-                <Pie data={chartData} />
+        <div className="dashboard-container">
+            <h1>Personal Finance Dashboard</h1>
+            <h2>Spending Breakdown</h2>
+            <Pie data={chartData} />
+            <div style={{
+                marginTop: '32px',
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                width: '100%',
+                maxWidth: '600px'
+            }}>
+            <div style={{
+                background: '#e0e7ff',
+                borderRadius: '10px',
+                padding: '18px 30px',
+                minWidth: '160px',
+                textAlign: 'center',
+                marginRight: '12px',
+                flex: 1
+            }}>
+                <div style={{ fontSize: '1.2rem', color: '#2563eb', fontWeight: 700 }}>
+                    {transactions.reduce((acc, t) => acc + Number(t.amount), 0).toLocaleString(undefined, { style: 'currency', currency: 'USD' })}
+                </div>
+                <div style={{ fontSize: '0.95rem', color: '#34495e', marginTop: '7px' }}>
+                    Total Spent
+                </div>
+            </div>
+            <div style={{
+                background: '#fef3c7',
+                borderRadius: '10px',
+                padding: '18px 30px',
+                minWidth: '160px',
+                textAlign: 'center',
+                marginLeft: '12px',
+                flex: 1
+            }}>
+                <div style={{ fontSize: '1.2rem', color: '#f59e42', fontWeight: 700 }}>
+                    {chartData.labels.length}
+                </div>
+                <div style={{ fontSize: '0.95rem', color: '#b45309', marginTop: '7px' }}>
+                    Categories
+                </div>
             </div>
         </div>
+    </div>
     );
 };
 
